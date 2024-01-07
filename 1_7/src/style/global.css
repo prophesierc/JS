@@ -1,0 +1,115 @@
+/*? global clearing */
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: #f7f7f7;
+    --dark: #222222;
+    --gap-primary: 16px;
+    --gap-secondary: 8px;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    overflow: hidden;
+    background-color: var(--dark);
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: var(--light);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+nav a.active {
+    background-color: crimson;
+    color: white;
+}
+
+nav .icon {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--gap-primary);
+}
+
+.btn {
+    border: none;
+    padding: var(--gap-secondary);
+    background-color: var(--light);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.btn:hover {
+    background-color: tomato;
+    color: var(--light);
+}
+
+.glowingTitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glowingTitle 1s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 600px) {
+    nav a:not(:first-child) {display: none;}
+    nav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav.responsive { position: relative; }
+    nav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+@-webkit-keyframes glowingTitle {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}

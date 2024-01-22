@@ -1,7 +1,5 @@
 function SearchBar() {
-    return (   
-          <div>test</div>
-    )
-  }
+  return <div className="search-bar" typeof="text"></div>;
+}
 
-export default SearchBar
+export default SearchBar;

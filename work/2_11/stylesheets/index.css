@@ -1,3 +1,16 @@
-html{
-  text-align: center;
+/*selects <ul class="primary-navigation flex">*/
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+/* Primary header */
+.logo {
+  margin: 2rem;
+}
+
+/* selects <header class='primary-header'> */
+/* using flex display positioning*/
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
 }

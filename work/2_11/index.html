@@ -15,15 +15,16 @@
   <!--nav > ul > li > a > span > /a > li > a > span > /a > /ul > /nav
   -->
   
-<header class='primary-header'>
+<header class='primary-header flex'>
   <div>
-    <img src='./assets/test.jpg'/>
+    <img src='./assets/test.png' alt='main logo' class='logo'>
   </div>
   
   <nav>
     <ul id='primary-navigation' class="primary-navigation flex">
       <li class="active">
           <a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html">
+            <!--aria-hidden prevents screen reader from calling out '00'-->
             <span aria-hidden="true">00</span>
             Home
           </a>

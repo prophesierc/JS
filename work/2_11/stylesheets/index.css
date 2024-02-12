@@ -1,3 +1,10 @@
+/*ff-sans-cond uppercase text-white letter-spacing-2*/
+.ff-sans-cond {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 /*selects <ul class="primary-navigation flex">*/
 .flex {
   display: flex;
@@ -13,4 +20,34 @@
 .primary-header {
   align-items: center;
   justify-content: space-between;
+}
+
+.primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+/* > child combinator */
+/*only selects span child inside parent a frpm .primary-navigation class*/
+/* can use .primary-navigation a > [aria-hidden='true'] instead*/
+.primary-navigation a > span {
+  font-weight: 700;
+  /*right margin in left-to-right writing mode and the left margin in right-to-left writing mode*/
+  /*  better margin usage for text that accounts for multilingual webapps */
+  margin-inline-end: 0.75em;
+}
+/*phone browser size - no scrolling - smaller nav*/
+@media (max-width: 35em) {
+  .primary-navigation{
+    position: fixed;
+    inset: 0 0 0 30%; /*up right down left*/
+    /*verticle nav instead of horizontal */
+    flex-direction: column;
+    background: steelblue;
+  }
 }

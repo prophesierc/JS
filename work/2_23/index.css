@@ -1,0 +1,17 @@
+.unordered-listed-item
+{
+  background-color: red;  
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+li{
+  display: inherit;
+  background-color: yellow;
+}
+#first-list{
+  background-color: blue;
+}
+li p{
+  background-color: green;
+}

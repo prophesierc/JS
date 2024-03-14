@@ -3,8 +3,7 @@ const button1 = () =>
   const newElement = document.getElementById('first-list');
   const p = document.createElement('p');
   p.innerText = 'bio';
-  newElement.appendChild(p);
-  console.log('test1');
+  newElement.appendChild(p);  
 }
 
 const button2 = () =>

@@ -30,15 +30,22 @@ const filter = function(arr, fn)
         // Check if the current element arr[i] satisfies the function fn
         if (fn(arr[i], i)) 
         {
-            // If truthy, copy arr[i] to arr[currentIndex]
+            // If truthy, copy arr[i] to arr[currentIndex] which modifies the elements of arr based on the if filter
             arr[currentIndex] = arr[i];
-            // Increment currentIndex to mark the next available position in arr
+            console.log('ac'+arr[currentIndex])
+            console.log('ai'+arr[i])
+
+            // Increment currentIndex to mark the next available position in arr by 1
             currentIndex++;
         }
     }
-    // Trim arr to contain only the filtered elements up to currentIndex
     arr.length = currentIndex;
+    // returns only the modifed values in arr instead of entire array of unfiltered elements
     return arr;
+
+    /* 
+    Creates psuedo index => loops through array => if function at array's index is true => copy current array value index and modify original array index value => fix the length of the modified array based on the index amount to only show the filtered values in the array
+    */
 };
 
 console.log(filter(arr = [1,2,3], fn = function firstIndex(n, i) { return i === 0; }));

@@ -22,6 +22,4 @@ let evenOddBit = function(n) {
     // returns in array 
 };
 
-
-console.log(evenOddBit(55)); // Output should be [2, 0]
-console.log(evenOddBit(200)); // Output should be [1, 0]
+console.log(evenOddBit(200)); // Output should be [1, 2]

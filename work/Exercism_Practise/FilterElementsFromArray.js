@@ -32,9 +32,7 @@ const filter = function(arr, fn)
         {
             // If truthy, copy arr[i] to arr[currentIndex] which modifies the elements of arr based on the if filter
             arr[currentIndex] = arr[i];
-            console.log('ac'+arr[currentIndex])
-            console.log('ai'+arr[i])
-
+            
             // Increment currentIndex to mark the next available position in arr by 1
             currentIndex++;
         }

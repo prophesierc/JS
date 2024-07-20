@@ -2,21 +2,23 @@
  * @param {Function} fn
  * @return {Function}
  */
-const memoize = (fn) => 
-{
+// Define a function `memoize` that takes another function `fn` as its argument
+const memoize = (fn) => {
+    // Create an object `cache` to store the results of function calls
     const cache = {}; 
 
-    return function(...args)
-    {            
+    // Return a new function that wraps around the original function `fn`
+    return (...args) => {            
+        // Check if the cache already has an entry for the given arguments
         if (args in cache) return cache[args];
 
-        const result = fn(...args);
-        cache[args] = result;
-        return result;
+        // If the result is not in the cache, compute it by calling the original function `fn`
+        // Store the result in the cache and return it
+        return cache[args] = fn(...args);
     }
 }
-    
 
+    
  let callCount = 0;
  const memoizedFn = memoize(function (a, b) {
     callCount += 1;
@@ -36,4 +38,28 @@ console.log(memoizedSum(2, 2)); // "call" - returns 4. However sum() was not cal
 console.log(memoizedSum(1, 2)); // "call" - returns 3. sum() was called as (1, 2) was not seen before.
 // "getCallCount" - total call count: 2
 
- 
+/*
+      [Start]
+         |
+         V
+    [Generate Key]
+         |
+         V
+    [Cache Check]
+    /          \
+    /            \
+    Yes          No
+    |             |
+    V             V
+    [Return    [Execute
+    Cached    Function]
+    Value]       |
+    |            V
+    |      [Update Cache]
+    |           |
+    |           V
+    |      [Return Result]
+    |          |
+    V          V
+    [End]    [End]
+*/
